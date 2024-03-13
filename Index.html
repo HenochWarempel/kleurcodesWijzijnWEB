@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kleurcodes en Fonts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
+    .label {
+      margin-bottom: 20px;
+    }
+    .color-code {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .copy-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .copied-indicator {
+      color: green;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="label">
+    <div style="color: #FF006C;"><h2>Warempel</h2></div>
+    <div class="color-code" style="color: #FF006C;">Roze: #FF006C</div>
+    <button class="copy-button" onclick="copyToClipboard('#FF006C', this)">Kopieer kleurcode</button>
+    <span class="copied-indicator" style="display: none;">Kleurcode gekopieerd</span><br>
+    <div class="color-code" style="color: #000000;">Wit: #efefef</div>
+    <button class="copy-button" onclick="copyToClipboard('#efefef', this)">Kopieer kleurcode</button>
+    <span class="copied-indicator" style="display: none;">Kleurcode gekopieerd</span><br>
+    <div class="color-code" style="color: #122024;">Zwart: #122024</div>
+    <button class="copy-button" onclick="copyToClipboard('#122024', this)">Kopieer kleurcode</button>
+    <span class="copied-indicator" style="display: none;">Kleurcode gekopieerd</span><br>
+    Font: Fredoka
+  </div>
+  
+  <div class="label">
+    <div style="color: #141480;"><h2>Exapps</h2></div>
+    <div class="color-code" style="color: #141480;">Blauw: #141480</div>
+    <button class="copy-button" onclick="copyToClipboard('#141480', this)">Kopieer kleurcode</button>
+    <span class="copied-indicator" style="display: none;">Kleurcode gekopieerd</span><br>
+    <div class="color-code" style="color: #000000;">Wit: #EBEBEC</div>
+    <button class="copy-button" onclick="copyToClipboard('#EBEBEC', this)">Kopieer kleurcode</button>
+    <span class="copied-indicator" style="display: none;">Kleurcode gekopieerd</span><br>
+    <div class="color-code" style="color: #000000;">Zwart: #000000</div>
+    <button class="copy-button" onclick="copyToClipboard('#000000', this)">Kopieer kleurcode</button>
+    <span class="copied-indicator" style="display: none;">Kleurcode gekopieerd</span><br>
+    Font: AmpleSoft
+  </div>
+
+  <div class="label">
+    <div style="color: #F15A24;"><h2>BIG FAT Internet</h2></div>
+    <div class="color-code" style="color: #F15A24;">Oranje: #F15A24</div>
+    <button class="copy-button" onclick="copyToClipboard('#F15A24', this)">Kopieer kleurcode</button>
+    <span class="copied-indicator" style="display: none;">Kleurcode gekopieerd</span><br>
+    <div class="color-code" style="color: #000000;">Zwart: #000000</div>
+    <button class="copy-button" onclick="copyToClipboard('#000000', this)">Kopieer kleurcode</button>
+    <span class="copied-indicator" style="display: none;">Kleurcode gekopieerd</span><br>
+    <div class="color-code" style="color: #000000;">Wit: #FFFFFF</div>
+    <button class="copy-button" onclick="copyToClipboard('#FFFFFF', this)">Kopieer kleurcode</button>
+    <span class="copied-indicator" style="display: none;">Kleurcode gekopieerd</span><br>
+    Font: Nexa Black
+  </div>
+
+  <script>
+    function copyToClipboard(colorCode, button) {
+      const textarea = document.createElement('textarea');
+      textarea.value = colorCode;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      
+      const indicator = button.nextElementSibling;
+      indicator.style.display = 'inline';
+      setTimeout(function() {
+        indicator.style.display = 'none';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
